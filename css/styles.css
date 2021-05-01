@@ -122,7 +122,7 @@ ul {
 .site-nav .active:visited {
   color: var(--hover-focus-color);
 }
-/* .site-nav .active::after {
+.site-nav .active::after {
   position: absolute;
   content: "";
   display: block;
@@ -131,25 +131,8 @@ ul {
   bottom: 0;
   background-color: rgba(33, 150, 243, 1);
   border-radius: 2px;
-} */
-.site-nav .link::after {
-  position: absolute;
-  content: "";
-  display: block;
-  width: 100%;
-  height: 4px;
-  bottom: 0;
-  background-color: rgba(33, 150, 243, 1);
-  border-radius: 2px;
-  opacity: 0;
+}
 
-  transition-property: opacity;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-.site-nav .link:hover::after {
-  opacity: 1;
-}
 .connection {
   display: flex;
   margin-left: auto;
@@ -345,17 +328,34 @@ ul {
 .work-activity .work-iten + .work-iten {
   margin-left: 30px;
 }
-.work-iten {
+.work-image {
   position: relative;
 }
-.work-image::before {
+.work-text {
   display: inline-block;
   position: absolute;
-  content: "";
-  bottom: 0;
+  top: 224px;
+  right: 0;
   width: 100%;
   height: 70px;
+  color: var(--basic-background-color);
   background-color: rgba(47, 48, 58, 0.8);
+}
+
+.work-text p {
+  display: flex;
+  padding-top: 27px;
+  padding-left: 82px;
+  padding-bottom: 27px;
+  padding-right: 83px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  justify-content: center;
+  font-style: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
 }
 
 /* Секція:"Наша команда" */
@@ -747,8 +747,8 @@ ul {
 }
 .photo-order {
   display: block;
-  max-width: 100%;
-  height: auto;
+  /* max-width: 100%;
+  height: auto; */
   width: 370px;
   margin-right: 30px;
   margin-bottom: 30px;
@@ -768,25 +768,69 @@ ul {
 .photo-order:nth-last-child(-n + 3) {
   margin-bottom: 0px;
 }
-.photo-pile {
-  position: relative;
+.photo-line {
   text-decoration: none;
 }
-.photo-pile::before {
+.photo-pile {
+  /* overflow: hidden; */
+  position: relative;
+}
+/* .photo-pile::before {
   display: inline-block;
   position: absolute;
   content: "";
   width: 100%;
   height: 100%;
   background-color: rgba(33, 150, 243, 0.9);
-  opacity: 0;
 
-  transition-property: opacity;
+  transform: translateY(100%);
+  transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .photo-pile:hover::before {
-  opacity: 1;
+  transform: translateY(0);
+} */
+.photo-text {
+  display: inline-block;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(100%);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); */
+}
+.photo-text:hover {
+  transform: translateY(0);
+}
+.photo-text p {
+  display: flex;
+  justify-content: center;
+  font-style: Regular;
+  font-size: 18px;
+  line-height: 1.555;
+  letter-spacing: 0.03em;
+  position: absolute;
+
+  width: 322px;
+  height: 168px;
+  top: 63px;
+  bottom: 63px;
+  left: 24px;
+  right: 24px;
+
+  color: rgba(255, 255, 255, 1);
+}
+
+.photo-picture {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
 }
 .photo-group {
   padding: 20px 24px;
@@ -795,11 +839,7 @@ ul {
   border-right: 1px solid rgba(238, 238, 238, 1);
   border-bottom: 1px solid rgba(238, 238, 238, 1);
 }
-.photo-picture {
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-}
-.photo h2 {
+.photo-group h2 {
   margin-top: 0px;
   margin-bottom: 4px;
 
@@ -809,7 +849,8 @@ ul {
   line-height: 2;
   letter-spacing: 0.06em;
 }
-.photo p {
+
+.photo-group p {
   margin-top: 0px;
   margin-bottom: 0px;
 
