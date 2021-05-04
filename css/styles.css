@@ -755,10 +755,6 @@ ul {
   width: 370px;
   margin-right: 30px;
   margin-bottom: 30px;
-
-  transition-property: box-shadow;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .photo-order:nth-child(3n) {
@@ -770,6 +766,10 @@ ul {
 .photo-line {
   display: block;
   text-decoration: none;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .photo-line:hover,
 .photo-line:focus {
