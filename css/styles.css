@@ -760,11 +760,7 @@ ul {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.photo-order:hover,
-.photo-order:focus {
-  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    0px 1px 1px rgba(0, 0, 0, 0.12);
-}
+
 .photo-order:nth-child(3n) {
   margin-right: 0px;
 }
@@ -772,7 +768,13 @@ ul {
   margin-bottom: 0px;
 }
 .photo-line {
+  display: block;
   text-decoration: none;
+}
+.photo-line:hover,
+.photo-line:focus {
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 .photo-pile {
   overflow: hidden;
